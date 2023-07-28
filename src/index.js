@@ -1,10 +1,14 @@
 const express = require('express');
+const favicon = require('serve-favicon');
+const path = require('path');
+
 const app = express();
 const { connectionDB } = require('./config/db.js');
 
 
 
-
+const faviconPath = path.join(__dirname, 'public', 'statue.ico');
+app.use(favicon(faviconPath));
 
 const sculpturesRouter = require('./routes/sculptures');
 
